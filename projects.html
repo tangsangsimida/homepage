@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目展示 - 汤红辉个人网站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="noise-bg"></div>
+    
+    <header class="glass-effect">
+        <div class="container">
+            <div class="logo">
+                <img src="imgs/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                    <li><a href="projects.html" class="active">项目展示</a></li>
+                    <li><a href="awards.html">荣誉奖项</a></li>
+                    <li><a href="contact.html">联系方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="projects-hero">
+            <div class="container">
+                <div class="projects-hero-content glass-card">
+                    <h1 class="animate-text">项目展示</h1>
+                    <p class="animate-text-delay">这里展示了我参与和主导的一些创新项目，涵盖机器人技术、人工智能、工业设计等多个领域。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-filter">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="robot">机器人</button>
+                    <button class="filter-btn" data-filter="ai">人工智能</button>
+                    <button class="filter-btn" data-filter="design">工业设计</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-grid">
+            <div class="container">
+                <div class="projects-container">
+                    <!-- 项目1 -->
+                    <div class="project-item glass-card" data-category="ai" id="project1">
+                        <div class="project-header">
+                            <div class="project-img">
+                                <img src="论文竞赛荣誉img/基于目标检测技术的自动售货机商品识别系统设计.jpg" alt="自动售货机商品识别系统">
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">人工智能</span>
+                                <span class="tag">计算机视觉</span>
+                                <span class="tag">目标检测</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h2>基于目标检测技术的自动售货机商品识别系统</h2>
+                            <div class="project-meta">
+                                <span><i class="far fa-calendar-alt"></i> 2023</span>
+                                <span><i class="fas fa-users"></i> 团队项目</span>
+                            </div>
+                            <div class="project-description">
+                                <p>该项目利用先进的计算机视觉技术，实现了自动售货机中商品的精准识别与库存管理。系统能够实时监测商品状态，自动识别商品种类和数量，提高了售货机的智能化水平和运营效率。</p>
+                                <h3>主要特点：</h3>
+                                <ul>
+                                    <li>采用深度学习目标检测算法，实现高精度商品识别</li>
+                                    <li>支持多种商品同时识别，准确率达95%以上</li>
+                                    <li>实时库存监控系统，自动生成补货提醒</li>
+                                    <li>低功耗设计，适合长时间运行</li>
+                                </ul>
+                                <h3>技术栈：</h3>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Python</span>
+                                    <span class="tech-item">TensorFlow</span>
+                                    <span class="tech-item">OpenCV</span>
+                                    <span class="tech-item">Raspberry Pi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 项目2 -->
+                    <div class="project-item glass-card" data-category="design" id="project2">
+                        <div class="project-header">
+                            <div class="project-img">
+                                <img src="论文竞赛荣誉img/自助售货机的称量输送装置.png" alt="自助售货机的称量输送装置">
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">工业设计</span>
+                                <span class="tag">机械设计</span>
+                                <span class="tag">自动化</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h2>自助售货机的称量输送装置</h2>
+                            <div class="project-meta">
+                                <span><i class="far fa-calendar-alt"></i> 2022</span>
+                                <span><i class="fas fa-user"></i> 个人项目</span>
+                            </div>
+                            <div class="project-description">
+                                <p>这是一种创新设计的自动称量与输送系统，专为自助售货机设计。该装置能够精确称量商品重量，并通过智能输送系统将商品传递给顾客，大大提高了售货机的效率与准确性。</p>
+                                <h3>主要特点：</h3>
+                                <ul>
+                                    <li>高精度称重系统，误差控制在±0.5g以内</li>
+                                    <li>模块化设计，易于安装和维护</li>
+                                    <li>智能防卡死机制，提高运行稳定性</li>
+                                    <li>低噪音设计，提升用户体验</li>
+                                </ul>
+                                <h3>技术亮点：</h3>
+                                <div class="tech-stack">
+                                    <span class="tech-item">SolidWorks</span>
+                                    <span class="tech-item">机械设计</span>
+                                    <span class="tech-item">传感器技术</span>
+                                    <span class="tech-item">控制系统</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-effect">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">TH</div>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-qq"></i></a>
+                </div>
+                <p class="copyright">© 2024 汤红辉. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>
