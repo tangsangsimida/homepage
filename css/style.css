@@ -360,8 +360,14 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-bottom: 40px;
 }
+
+.projects-showcase.single-project {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
 
 .project-card {
     overflow: hidden;
@@ -414,13 +420,29 @@ main {
     padding: 80px 0;
 }
 
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* 滚动到复制内容的起点 */
+    }
+}
+
+.awards-preview {
+    overflow: hidden; /* 隐藏容器外的内容 */
+}
+
 .awards-slider {
     display: flex;
     gap: 30px;
-    overflow-x: auto;
     padding: 20px 0;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Firefox */
+    width: fit-content; /* 宽度自适应内容 */
+    animation: scroll 60s linear infinite; /* 应用滚动动画，速度可调 */
+}
+
+.awards-slider:hover {
+    animation-play-state: paused; /* 鼠标悬停时暂停动画 */
 }
 
 .awards-slider::-webkit-scrollbar {
@@ -428,18 +450,33 @@ main {
 }
 
 .award-slide {
+    flex: 0 0 320px; /* 设置固定宽度 */
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 25px rgba(31, 38, 135, 0.1);
+    overflow: hidden; /* 隐藏溢出内容以匹配圆角 */
+    display: flex;
+    flex-direction: column;
+}
+
+.award-slide img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.award-slide h3 {
     padding: 15px;
-    transition: all 0.4s ease;
-    flex: 0 0 300px;
-    scroll-snap-align: start;
+    margin: 0;
+    font-size: 1rem;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
+
 
 .award-slide img {
     width: 100%;
