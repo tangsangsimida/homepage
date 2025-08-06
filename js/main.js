@@ -61,65 +61,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // 滚动时检查元素是否在视口中
     window.addEventListener('scroll', fadeInOnScroll);
 
-    // 奖项滑块自动滚动
+    // 奖项滑块自动滚动 - 通过CSS动画实现
     const awardsSlider = document.querySelector('.awards-slider');
     if (awardsSlider) {
-        let scrollAmount = 0;
-        const slideWidth = 330; // 卡片宽度 + 间距
-        const scrollSpeed = 2;
-        let isHovered = false;
+        const slides = Array.from(awardsSlider.children);
+        const slideCount = slides.length;
 
-        awardsSlider.addEventListener('mouseenter', () => {
-            isHovered = true;
-        });
+        if (slideCount > 0) {
+            // Clone slides for seamless loop
+            slides.forEach(slide => {
+                const clone = slide.cloneNode(true);
+                awardsSlider.appendChild(clone);
+            });
 
-        awardsSlider.addEventListener('mouseleave', () => {
-            isHovered = false;
-        });
-
-        function autoScroll() {
-            if (!isHovered && awardsSlider) {
-                scrollAmount += scrollSpeed;
-                awardsSlider.scrollLeft = scrollAmount;
-
-                // 当滚动到最后一个卡片时，重置滚动位置
-                if (scrollAmount >= (awardsSlider.scrollWidth - awardsSlider.clientWidth)) {
-                    scrollAmount = 0;
-                    // 平滑回到开始位置
-                    smoothScrollTo(awardsSlider, 0, 500);
-                }
-            }
-            requestAnimationFrame(autoScroll);
+            // Dynamically set animation duration for consistent speed
+            const animationDuration = slideCount * 5; // 5 seconds per original slide
+            awardsSlider.style.animationDuration = `${animationDuration}s`;
         }
-
-        // 平滑滚动函数
-        function smoothScrollTo(element, to, duration) {
-            const start = element.scrollLeft;
-            const change = to - start;
-            let currentTime = 0;
-            const increment = 20;
-
-            function animateScroll() {
-                currentTime += increment;
-                const val = easeInOutQuad(currentTime, start, change, duration);
-                element.scrollLeft = val;
-                if (currentTime < duration) {
-                    setTimeout(animateScroll, increment);
-                }
-            }
-
-            function easeInOutQuad(t, b, c, d) {
-                t /= d / 2;
-                if (t < 1) return c / 2 * t * t + b;
-                t--;
-                return -c / 2 * (t * (t - 2) - 1) + b;
-            }
-
-            animateScroll();
-        }
-
-        // 启动自动滚动
-        autoScroll();
     }
 
     // 联系表单提交
